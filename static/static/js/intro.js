@@ -46,4 +46,23 @@ window.onload = () => {
         "/static/intro/img-19.jpg",
         "/static/intro/img-20.jpg"]);
 
+ Promise.all(Array.from(document.images).map(img => {
+        if (img.complete) {
+            return Promise.resolve(img.naturalHeight !== 0);
+        }
+        return new Promise(resolve => {
+            img.addEventListener('load', () => resolve(true));
+            img.addEventListener('error', () => resolve(false));
+        });
+    })).then(results => {
+        if (results.every(res => res)) {
+            loading();
+            if (audio.readyState > 3) {
+                initAnimation();
+            }
+
+        } else {
+            console.log('some images failed to load, all finished loading');
+        }
+    });
  }
