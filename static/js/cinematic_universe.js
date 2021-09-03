@@ -12,20 +12,22 @@ const fetchMCUCharacters = () => {
 const createCards = (movies) => {
     console.log(movies.data)
     for (let movie of movies.data) {
-        characterContainer.insertAdjacentHTML('beforeend', `
+        if (movie.cover_url!==null){
+            characterContainer.insertAdjacentHTML('beforeend', `
             <article class="gradient-shadow">
-            <div class="card card_details_container">
-               <img src="${movie.cover_url}" alt="${movie.title}" class="card_img">
-             
-                <div class="descriptions">
-                    <h2 class="card__title">${movie.title}</h2>
-                    <p class="overview">${movie.overview}
-                    </p>
-            </div>
-            </div>
-
+                <div class="card card_details_container">
+                   <img src="${movie.cover_url}" alt="${movie.title}" class="card_img">
+                    <div class="descriptions">
+                        <h2 class="card__title">${movie.title}</h2>
+                        <p className = "overview">` +
+                        (movie.overview !== null ? movie.overview : 'No info') +
+                        `</p>                  
+                    </div>
+                </div>
             </article>
         `);
+        }
+
     }
 }
 
