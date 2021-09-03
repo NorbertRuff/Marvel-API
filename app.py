@@ -31,6 +31,69 @@ def cinematic_universe():
     return render_template('marvel_cinematic_universe.html')
 
 
+@app.route('/get_characters_data', methods=['GET'])
+def get_characters_data():
+    page = "characters"
+    try:
+        offset = request.values['offset']
+        order = request.values['order']
+        limit = request.values['limit']
+    except KeyError:
+        offset = "0"
+        order = "modified"
+        limit = "30"
+    try:
+        response = requests.get(
+            f"https://gateway.marvel.com/v1/public/{page}"
+            f"?orderBy={order}"
+            f"&limit={limit}"
+            f"&ts={timestamp}"
+            f"&apikey={public_key}"
+            f"&hash={marvel_hash}").json()
+        characters_list = response['data']['results']
+        return jsonify(characters_list)
+    except KeyError:
+        return jsonify({'response': 'Error with key'})
+    except:
+        return jsonify({'response': 'Error with server'})
+
+
+@app.route('/get_avanger_data', methods=['GET'])
+def get_avanger_data():
+    try:
+        char_id = request.values['charId']
+        page = f"characters/{char_id}"
+    except KeyError:
+        return jsonify({'response': 'Error with key'})
+    try:
+        response = requests.get(
+            f"https://gateway.marvel.com/v1/public/{page}"
+            f"?ts={timestamp}"
+            f"&apikey={public_key}"
+            f"&hash={marvel_hash}").json()
+        return jsonify(response["data"]["results"][0])
+    except KeyError:
+        return jsonify({'response': 'Error with key'})
+    except:
+        return jsonify({'response': 'Error with server'})
+
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'GET':
+        return render_template('login.html', error=error)
+
+
+@app.route("/register", methods=['GET', 'POST'])
+def register():
+    error = None
+    if request.method == 'POST':
+        return render_template('login.html')
+    if request.method == 'GET':
+        return render_template('register.html')
+
+
 if __name__ == '__main__':
     app.run(
         debug=True,
