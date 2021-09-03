@@ -1,0 +1,12 @@
+
+#character_grid_container {
+    display: flex;
+    margin-top: 2vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/*<------------------------------card hover----------------------------------->*/
