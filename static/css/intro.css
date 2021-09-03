@@ -8,6 +8,17 @@
   opacity: 0;
 }
 
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: BentonSans, sans-serif;
+  background-image: radial-gradient(#730801, #1f0100);
+  overflow: hidden;
+}
+
 #hidden {
   position: fixed;
   opacity: 0;

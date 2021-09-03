@@ -1,0 +1,236 @@
+.header_grid_container {
+    background-color: #e12835;
+    background-image: radial-gradient(#e12835 20%, #be2633 50%, rgba(0, 0, 0, 0.5) 100%);
+    background-size: 120%;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    ". wrapper login_register"
+    "flex-container flex-container flex-container";
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: BentonSans, sans-serif;
+  background-image: radial-gradient(#730801, #1f0100);
+}
+.wrapper {
+    grid-area: wrapper;
+}
+
+.login_register {
+    grid-area: login_register;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.flex-container {
+    background-color: #000;
+    grid-area: flex-container;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+}
+.dropdown-content {
+    display: none;
+    background-color: #f9f9f9;
+    width: 100vw;
+    height: 30vh;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 10;
+}
+/*<------------------------------------logo------------------------------------->*/
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    cursor: pointer;
+    text-align: center;
+}
+
+.api {
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    transition: opacity 150ms linear;
+}
+
+.marvel, .studios {
+    padding: 10px;
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -0.1rem;
+    font-size: 5rem;
+    display: inline-block;
+}
+
+.studios {
+    font-weight: 500;
+    letter-spacing: -0.3rem;
+
+}
+
+.marvel {
+    z-index: 10;
+    font-weight: 800;
+}
+
+.marvel:before {
+    z-index: -10;
+    content: "";
+    display: block;
+    background-color: #e12835;
+    border: solid rgba(255, 255, 255, 0.2) 1px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -8px;
+    left: 0;
+}
+
+.studios:after, .studios:before {
+    content: "";
+    display: block;
+    height: 4px;
+    position: absolute;
+    background-color: #fff;
+    left: 0.4rem;
+    right: 0.4rem;
+}
+
+.wrapper.run-animation {
+    animation: shrink ease-out 4800ms forwards 600ms;
+}
+
+.wrapper.run-animation .marvel {
+    transform: translate(100px, 10px);
+    animation: slide-out-X 750ms ease forwards;
+}
+
+.wrapper.run-animation .studios {
+    transform: translate(-100px, 10px);
+    color: transparent;
+    animation: slide-out-X 750ms ease forwards, show-text 300ms linear forwards 1500ms;
+}
+
+.wrapper.run-animation .studios:before {
+    transform: translateY(2.9rem);
+    animation: slide-out-Y 300ms ease forwards 750ms;
+}
+
+.wrapper.run-animation .studios:after {
+    transform: translateY(-2.9rem);
+    animation: slide-out-Y 300ms ease forwards 750ms;
+}
+
+.wrapper.run-animation .api {
+    opacity: 0;
+    animation: fade-down 1200ms ease 3600ms forwards;
+}
+
+
+/*<------------------------------------logo------------------------------------->*/
+/*<------------------------------------btn------------------------------------->*/
+.menu_btn {
+    width: 130px;
+    height: 40px;
+    font-style: italic;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    z-index: 1;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.menu_btn:hover{
+    background: white;
+    color: #000;
+}
+
+
+.menu_btn:before,
+.menu_btn:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 100%;
+    height: 50%;
+    right: 0;
+    z-index: -1;
+    background: #000;
+    transition: all 0.3s ease;
+}
+
+.menu_btn:before {
+    top: 0;
+}
+
+.menu_btn:after {
+    bottom: 0;
+}
+
+.menu_btn:hover:before,
+.menu_btn:hover:after {
+    height: 0;
+    background-color: #000;
+}
+/*<------------------------------------btn------------------------------------->*/
+
+/*<------------------------------------animations------------------------------------->*/
+@keyframes slide-out-X {
+    100% {
+        transform: translate(0, 10px);
+    }
+}
+
+@keyframes slide-out-Y {
+    100% {
+        transform: translate(0, -10px);
+    }
+}
+
+@keyframes show-text {
+    100% {
+        color: #fff;
+    }
+}
+
+@keyframes shrink {
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(10px);
+        opacity: 0.5;
+    }
+}
+
+/*<------------------------------------animations------------------------------------->*/
