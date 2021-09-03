@@ -94,6 +94,34 @@
     box-sizing: border-box;
     clip-path: circle(0% at 100% 100%);
 }
+/*<------------------------------gradient shadow----------------------------------->*/
 
+.gradient-shadow {
+    background: linear-gradient(45deg, hsl(var(--clr-orange)), hsl(var(--clr-blue)));
+    position: relative;
+    isolation: isolate;
+    border-radius: 1em;
+    border: 5px solid black;
+}
+
+.gradient-shadow::before,
+.gradient-shadow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: inherit;
+}
+
+.gradient-shadow::before {
+    filter: blur(2em);
+}
+
+.gradient-shadow::after {
+    opacity: 0.8;
+    filter: blur(2em);
+}
+
+/*<------------------------------gradient shadow----------------------------------->*/
 
 /*<------------------------------card description----------------------------------->*/
