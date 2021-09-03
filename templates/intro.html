@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+        <!-- css -->
+        {% block css %}
+            <link rel="stylesheet" href="/static/css/intro.css" type="text/css">
+        {% endblock %}
+        <!-- javascript -->
+        {% block scripts %}
+            <script src="/static/js/intro.js" defer></script>
+        {% endblock %}
+
+{% block title %}Intro{% endblock %}
+
+{% block content %}
+    <div id="marvel_logo">MARVEL</div>
+    <div id="background"></div>
+
+    <div id="loader">
+        <div>
+            <span id="loader_logo"><img src="/static/intro/marvel_logo.png" alt="marvel_logo"></span>
+            <span id="loader_percentage"></span>
+            <span id="anim_message">LOADING SITE</span>
+        </div>
+    </div>
+
+    <div id="hidden">
+        <img src="/static/intro/img-1.jpg" alt="intro1.jpg">
+        <img src="/static/intro/img-2.jpg" alt="intro2.jpg">
+        <img src="/static/intro/img-3.jpg" alt="intro3.jpg">
+        <img src="/static/intro/img-4.jpg" alt="intro4.jpg">
+        <img src="/static/intro/img-5.jpg" alt="intro5.jpg">
+        <img src="/static/intro/img-6.jpg" alt="intro6.jpg">
+        <img src="/static/intro/img-7.jpg" alt="intro7.jpg">
+        <img src="/static/intro/img-8.jpg" alt="intro8.jpg">
+        <img src="/static/intro/img-9.jpg" alt="intro9.jpg">
+        <img src="/static/intro/img-10.jpg" alt="intro10.jpg">
+        <img src="/static/intro/img-11.jpg" alt="intro11.jpg">
+        <img src="/static/intro/img-12.jpg" alt="intro12.jpg">
+        <img src="/static/intro/img-13.jpg" alt="intro13.jpg">
+        <img src="/static/intro/img-14.jpg" alt="intro14.jpg">
+        <img src="/static/intro/img-15.jpg" alt="intro15.jpg">
+        <img src="/static/intro/img-16.jpg" alt="intro16.jpg">
+        <img src="/static/intro/img-17.jpg" alt="intro17.jpg">
+        <img src="/static/intro/img-18.jpg" alt="intro18.jpg">
+        <img src="/static/intro/img-19.jpg" alt="intro19.jpg">
+        <img src="/static/intro/img-20.jpg" alt="intro20.jpg">
+    </div>
+    <audio src="/static/audio/intro.mp3" id="audio"></audio>
+
+{% endblock %}
