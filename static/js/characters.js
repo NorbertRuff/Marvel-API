@@ -41,5 +41,32 @@ window.onload = () => {
     }
 
 
+    function createCard(character) {
+        gridContainer.insertAdjacentHTML('beforeend', `
+            <div class="character_card">
+               <div class="card_img" data-id="${character.id}"></div>
+               <div class="card_title"> ${character.name}</div>
+               <div class="card_id"> ${character.id}</div>
+               <div class="card_id"> ${character.description}</div>
+               
+            </div>
+        `);
+        document.querySelector(`.card_img[data-id='${character.id}']`).style.backgroundImage = `url(${character.thumbnail.path}` + `.${character.thumbnail.extension})`;
+    }
+
+    function fetchCharacters(url, callback) {
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.error("Error with server");
+                }
+            })
+            .then(data => {
+                callback(data);
+            })
+            .catch(error => console.error("Error with fetch " + error));
+    }
 
 }
