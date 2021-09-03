@@ -1,0 +1,17 @@
+.header_grid_container {
+    background-color: #e12835;
+    background-image: radial-gradient(#e12835 20%, #be2633 50%, rgba(0, 0, 0, 0.5) 100%);
+    background-size: 120%;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    ". wrapper login_register"
+    "flex-container flex-container flex-container";
+}
+
+.wrapper {
+    grid-area: wrapper;
+}
