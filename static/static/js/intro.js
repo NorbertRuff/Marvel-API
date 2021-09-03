@@ -65,4 +65,51 @@ window.onload = () => {
             console.log('some images failed to load, all finished loading');
         }
     });
- }
+
+    function initAnimation() {
+        delay(2000).then(() => {
+            animation_percentage.style.animation = "blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both";
+            loader_logo.style.animation = "heartbeat 1.5s ease-in-out infinite both";
+            animation_message.innerHTML = "PLAY INTRO";
+            loader_div.style.cursor = "pointer";
+            loader_div.addEventListener("click", function anim() {
+                loader_div.style.animation = "blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both";
+                playAnimation();
+                loader_div.removeEventListener("click", anim)
+                delay(1000).then(() => window.addEventListener("click", function () {
+                    window.location.href = "/home";
+                }))
+            });
+        });
+    }
+
+    async function delay(ms) {
+        return await new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function loading() {
+        const loading_anim = setInterval(() => {
+            counter = counter + 1;
+            animation_percentage.innerHTML = counter + ' %';
+            if (counter === 100) {
+                clearInterval(loading_anim);
+            }
+        }, 20);
+    }
+
+    function playAnimation() {
+        document.getElementById("marvel_logo").style.animation = "marvel 11s ease 2s forwards";
+        document.getElementById("background").style.animation = "hideBackground 14s ease 0s forwards";
+        let bg = document.getElementById("background");
+        let bgNum = 0;
+        audio.play();
+        let marvelInterval = setInterval(function () {
+            bgNum = (bgNum % 20) + 1;
+            bg.style.backgroundImage = `url(/static/intro/img-${bgNum}.jpg)`;
+        }, 100);
+        setTimeout(function () {
+            clearInterval(marvelInterval);
+        }, 28000);
+    }
+}
+
