@@ -15,3 +15,12 @@
 .wrapper {
     grid-area: wrapper;
 }
+
+.login_register {
+    grid-area: login_register;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
