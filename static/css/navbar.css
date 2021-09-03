@@ -188,6 +188,42 @@
     height: 0;
     background-color: #000;
 }
-
-
 /*<------------------------------------btn------------------------------------->*/
+
+/*<------------------------------------animations------------------------------------->*/
+@keyframes slide-out-X {
+    100% {
+        transform: translate(0, 10px);
+    }
+}
+
+@keyframes slide-out-Y {
+    100% {
+        transform: translate(0, -10px);
+    }
+}
+
+@keyframes show-text {
+    100% {
+        color: #fff;
+    }
+}
+
+@keyframes shrink {
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(10px);
+        opacity: 0.5;
+    }
+}
+
+/*<------------------------------------animations------------------------------------->*/
