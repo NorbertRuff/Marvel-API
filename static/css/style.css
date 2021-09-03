@@ -1,0 +1,34 @@
+:root {
+  --clr-orange: 7 100% 63%;
+  --clr-blue: 239 100% 50%;
+  --spacer: 2rem;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+    font-family: BentonSans;
+    src: url(/static/font/BentonSans-Comp-Black-Regular.otf);
+}
+
+body {
+    background: #4b6cb7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #182848, #4b6cb7); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: BentonSans, sans-serif;
+    /*font-family: "Barlow Condensed", sans-serif;*/
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: BentonSans, sans-serif;
+  background-image: radial-gradient(#730801, #1f0100);
+}
