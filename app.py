@@ -1,7 +1,7 @@
 import hashlib
 import os
-
-from flask import Flask, render_template
+import requests as requests
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
