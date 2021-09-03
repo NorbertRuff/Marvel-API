@@ -24,3 +24,21 @@
     justify-content: center;
     align-items: center;
 }
+.flex-container {
+    background-color: #000;
+    grid-area: flex-container;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+}
+.dropdown-content {
+    display: none;
+    background-color: #f9f9f9;
+    width: 100vw;
+    height: 30vh;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 10;
+}
