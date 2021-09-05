@@ -2,18 +2,7 @@ window.onload = () => {
     let marvelLogo = document.querySelector(".marvel");
     let studios = document.querySelector(".studios");
     let apiLogo = document.querySelector(".api");
-    let dropdown = document.querySelector(".dropdown-content");
-    let buttons = document.getElementsByClassName("menu_btn");
-
-    for (let button of buttons) {
-        button.addEventListener("mouseover", function () {
-            dropdown.style.display = "inline-block";
-        });
-    }
-    dropdown.addEventListener("mouseout", function () {
-        dropdown.style.display = "none";
-    });
-    var mql = window.matchMedia('(max-width: 600px)');
+    let mql = window.matchMedia('(max-width: 600px)');
 
     function screenTest(e) {
         if (e.matches) {
