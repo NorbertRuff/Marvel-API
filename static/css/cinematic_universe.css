@@ -1,5 +1,14 @@
 
-#character_grid_container {
+#featured_movies_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh auto;
+    gap: 20px;
+    width: 80%;
+}
+#movies_container {
     display: flex;
     margin-top: 2vh;
     flex-wrap: wrap;
@@ -9,15 +18,23 @@
     width: 100%;
 }
 
+.title {
+    padding: 2vh 2vh;
+    text-align: center;
+    background: white;
+}
+
+
 /*<------------------------------card hover----------------------------------->*/
 
-.card:hover .descriptions {
+.card:hover .descriptions,
+.featured_card:hover .descriptions {
     left: 0;
     transition: all 1s ease-in-out;
     clip-path: circle(75%);
 }
 
-.card:hover {
+.card:hover, .featured_card:hover {
     transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
     box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
     transform: scale(1);
@@ -29,7 +46,8 @@
     background-image: linear-gradient(40deg, hsl(var(--clr-blue)), hsl(var(--clr-orange)));
 }
 
-.card:hover img {
+.card:hover img,
+.featured_card:hover img{
     transition: all .8s cubic-bezier(0.89, 0.17, 0.34, 0.86);
     transform: scale(1.5) rotate(-20deg);
     filter: blur(3px);
@@ -45,6 +63,20 @@
     color:  var(--clr-black);;
     box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
     min-height: 50ch;
+    transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
+    cursor: pointer;
+
+}
+.featured_card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacer);
+    min-width: 30ch;
+    min-height: 45ch;
+    border-radius: 1em;
+    color:  var(--clr-black);;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
+
     transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
     cursor: pointer;
 
