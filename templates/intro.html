@@ -1,16 +1,16 @@
-{% extends 'layout.html' %}
-        <!-- css -->
-        {% block css %}
-            <link rel="stylesheet" href="/static/css/intro.css" type="text/css">
-        {% endblock %}
-        <!-- javascript -->
-        {% block scripts %}
-            <script src="/static/js/intro.js" defer></script>
-        {% endblock %}
-
-{% block title %}Intro{% endblock %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/img/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/intro.css" type="text/css">
+    <script src="/static/js/intro.js" defer></script>
+    <title>Intro | Marvel API</title>
+</head>
+<body>
     <div id="marvel_logo">MARVEL</div>
     <div id="background"></div>
 
@@ -45,5 +45,4 @@
         <img src="/static/intro/img-20.jpg" alt="intro20.jpg">
     </div>
     <audio src="/static/audio/intro.mp3" id="audio"></audio>
-
-{% endblock %}
+</body>
