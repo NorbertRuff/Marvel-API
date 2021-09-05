@@ -1,7 +1,7 @@
 import hashlib
 import os
 import requests as requests
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, make_response
 
 app = Flask(__name__)
 
@@ -29,6 +29,17 @@ def characters():
 @app.route("/cinematic_universe", methods=['GET'])
 def cinematic_universe():
     return render_template('marvel_cinematic_universe.html')
+
+
+@app.route("/get_mcu_movies", methods=['GET'])
+def get_mcu_movies():
+    url = "https://mcuapi.herokuapp.com/api/v1/movies"
+    try:
+        response = requests.get(url).json()
+        movies_list = response['data']
+        return jsonify(movies_list)
+    except:
+        return make_response(jsonify({'response': 'Error with server'}), 400)
 
 
 @app.route('/get_characters_data', methods=['GET'])
@@ -96,6 +107,7 @@ def register():
 
 if __name__ == '__main__':
     app.run(
+        use_reloader=True,
         debug=True,
         port=5000,
     )

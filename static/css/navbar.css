@@ -1,11 +1,10 @@
 .header_grid_container {
-    background-color: #e12835;
-    background-image: radial-gradient(#e12835 20%, #be2633 50%, rgba(0, 0, 0, 0.5) 100%);
+    background-color: var(--clr-marvelred);
+    background-image: var(--clr-marvelgradient);
     background-size: 120%;
     background-position: center;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
     ". wrapper login_register"
@@ -15,11 +14,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
   font-family: BentonSans, sans-serif;
-  background-image: radial-gradient(#730801, #1f0100);
+  background-image: var(--clr-black);
+    z-index: 10;
+    overflow: hidden;
 }
-.wrapper {
+.logo-wrapper {
     grid-area: wrapper;
 }
 
@@ -32,28 +32,31 @@
     align-items: center;
 }
 .flex-container {
-    background-color: #000;
+    background-color: black;
     grid-area: flex-container;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 5vh;
+    min-height: 5vh;
 }
 .dropdown-content {
     display: none;
-    background-color: #f9f9f9;
+    background-color: var(--clr-white);
     width: 100vw;
     height: 30vh;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     padding: 12px 16px;
     z-index: 10;
+
 }
+
 /*<------------------------------------logo------------------------------------->*/
-.wrapper {
+.logo-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .logo {
@@ -62,20 +65,23 @@
 }
 
 .api {
-    color: #fff;
+    color:  var(--clr-white);
     font-size: 1.5rem;
     text-transform: uppercase;
     transition: opacity 150ms linear;
 }
 
 .marvel, .studios {
-    padding: 10px;
+    transition: all 1s ease-in-out;
+    padding: 10px 15px;
     position: relative;
-    color: #fff;
+    color: var(--clr-white);
     text-transform: uppercase;
     letter-spacing: -0.1rem;
     font-size: 5rem;
     display: inline-block;
+
+
 }
 
 .studios {
@@ -87,13 +93,14 @@
 .marvel {
     z-index: 10;
     font-weight: 800;
+    transition: transform .15s .5s,-webkit-transform .15s .5s;
 }
 
 .marvel:before {
     z-index: -10;
     content: "";
     display: block;
-    background-color: #e12835;
+    background-color: var(--clr-marvelred);
     border: solid rgba(255, 255, 255, 0.2) 1px;
     height: 100%;
     width: 100%;
@@ -107,37 +114,37 @@
     display: block;
     height: 4px;
     position: absolute;
-    background-color: #fff;
+    background-color: var(--clr-white);
     left: 0.4rem;
     right: 0.4rem;
 }
 
-.wrapper.run-animation {
+.logo-wrapper.run-animation {
     animation: shrink ease-out 4800ms forwards 600ms;
 }
 
-.wrapper.run-animation .marvel {
+.logo-wrapper.run-animation .marvel {
     transform: translate(100px, 10px);
     animation: slide-out-X 750ms ease forwards;
 }
 
-.wrapper.run-animation .studios {
+.logo-wrapper.run-animation .studios {
     transform: translate(-100px, 10px);
     color: transparent;
     animation: slide-out-X 750ms ease forwards, show-text 300ms linear forwards 1500ms;
 }
 
-.wrapper.run-animation .studios:before {
+.logo-wrapper.run-animation .studios:before {
     transform: translateY(2.9rem);
     animation: slide-out-Y 300ms ease forwards 750ms;
 }
 
-.wrapper.run-animation .studios:after {
+.logo-wrapper.run-animation .studios:after {
     transform: translateY(-2.9rem);
     animation: slide-out-Y 300ms ease forwards 750ms;
 }
 
-.wrapper.run-animation .api {
+.logo-wrapper.run-animation .api {
     opacity: 0;
     animation: fade-down 1200ms ease 3600ms forwards;
 }
@@ -153,8 +160,8 @@
     cursor: pointer;
     position: relative;
     display: inline-block;
-    background: #000;
-    color: #fff;
+    background: var(--clr-black);
+    color: var(--clr-white);
     line-height: 42px;
     padding: 0;
     border: none;
@@ -164,8 +171,8 @@
 }
 
 .menu_btn:hover{
-    background: white;
-    color: #000;
+    background: var(--clr-white);
+    color: var(--clr-black);
 }
 
 
@@ -178,7 +185,7 @@
     height: 50%;
     right: 0;
     z-index: -1;
-    background: #000;
+    background: var(--clr-black);
     transition: all 0.3s ease;
 }
 
@@ -193,7 +200,7 @@
 .menu_btn:hover:before,
 .menu_btn:hover:after {
     height: 0;
-    background-color: #000;
+    background-color:  var(--clr-black);
 }
 /*<------------------------------------btn------------------------------------->*/
 
@@ -212,7 +219,7 @@
 
 @keyframes show-text {
     100% {
-        color: #fff;
+        color:  var(--clr-white);
     }
 }
 

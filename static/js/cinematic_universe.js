@@ -2,7 +2,7 @@ import {dataHandler} from "./data_handler.js";
 
 
 const characterContainer = document.querySelector("#character_grid_container");
-const url = "https://mcuapi.herokuapp.com/api/v1/movies";
+const url = "/get_mcu_movies";
 
 const fetchMCUCharacters = () => {
     dataHandler._api_get(url, createCards);
@@ -10,8 +10,7 @@ const fetchMCUCharacters = () => {
 
 
 const createCards = (movies) => {
-    console.log(movies.data)
-    for (let movie of movies.data) {
+    for (let movie of movies) {
         if (movie.cover_url!==null){
             characterContainer.insertAdjacentHTML('beforeend', `
             <article class="gradient-shadow">
