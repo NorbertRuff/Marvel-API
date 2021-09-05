@@ -42,7 +42,7 @@
     padding: var(--spacer);
     min-width: 35ch;
     border-radius: 1em;
-    color: black;
+    color:  var(--clr-black);;
     box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
     min-height: 50ch;
     transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
@@ -56,7 +56,7 @@
     overflow-y: auto;
 }
 .card__title {
-    color: black;
+    color:  var(--clr-black);
     font-size: 1.5rem;
     padding-bottom: 1vh;
 }
@@ -101,7 +101,7 @@
     position: relative;
     isolation: isolate;
     border-radius: 1em;
-    border: 5px solid black;
+    border: 5px solid  var(--clr-black);;
 }
 
 .gradient-shadow::before,

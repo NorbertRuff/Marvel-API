@@ -1,6 +1,11 @@
 :root {
   --clr-orange: 7 100% 63%;
   --clr-blue: 239 100% 50%;
+  --clr-white: #f9f9f9;
+  --clr-black: black;
+  --clr-marvelred: #e12835;
+  --clr-marvelgradient: radial-gradient(#e12835 20%, #be2633 50%, rgba(0, 0, 0, 0.5) 100%);
+  --clr-navbargradient: radial-gradient(#730801, #1f0100);
   --spacer: 2rem;
 }
 *,
