@@ -10,15 +10,21 @@
     ". wrapper login_register"
     "flex-container flex-container flex-container";
 }
+
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: BentonSans, sans-serif;
-  background-image: var(--clr-black);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    font-family: BentonSans, sans-serif;
+    background-image: var(--clr-black);
     z-index: 10;
-    overflow: hidden;
 }
+
+.subnav:hover .dropdown-content {
+  display: block;
+}
+
 .logo-wrapper {
     grid-area: wrapper;
 }
@@ -31,6 +37,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .flex-container {
     background-color: black;
     grid-area: flex-container;
@@ -39,16 +46,19 @@
     justify-content: center;
     align-items: center;
     min-height: 5vh;
+    position: relative;
 }
+
 .dropdown-content {
     display: none;
-    background-color: var(--clr-white);
-    width: 100vw;
+    position: absolute;
+    left: 0;
+    width: 100%;
     height: 30vh;
+    background-color: var(--clr-white);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     padding: 12px 16px;
     z-index: 10;
-
 }
 
 /*<------------------------------------logo------------------------------------->*/
@@ -65,7 +75,7 @@
 }
 
 .api {
-    color:  var(--clr-white);
+    color: var(--clr-white);
     font-size: 1.5rem;
     text-transform: uppercase;
     transition: opacity 150ms linear;
@@ -93,7 +103,7 @@
 .marvel {
     z-index: 10;
     font-weight: 800;
-    transition: transform .15s .5s,-webkit-transform .15s .5s;
+    transition: transform .15s .5s, -webkit-transform .15s .5s;
 }
 
 .marvel:before {
@@ -170,11 +180,10 @@
     transition: all 0.3s linear;
 }
 
-.menu_btn:hover{
+.menu_btn:hover {
     background: var(--clr-white);
     color: var(--clr-black);
 }
-
 
 .menu_btn:before,
 .menu_btn:after {
@@ -200,7 +209,7 @@
 .menu_btn:hover:before,
 .menu_btn:hover:after {
     height: 0;
-    background-color:  var(--clr-black);
+    background-color: var(--clr-black);
 }
 /*<------------------------------------btn------------------------------------->*/
 
@@ -219,7 +228,7 @@
 
 @keyframes show-text {
     100% {
-        color:  var(--clr-white);
+        color: var(--clr-white);
     }
 }
 
