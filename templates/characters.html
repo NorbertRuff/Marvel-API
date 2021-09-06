@@ -1,15 +1,15 @@
 {% extends 'layout.html' %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/characters.css">
+    <link rel="stylesheet" href="/static/css/cinematic_universe.css">
 {% endblock %}
 {% block scripts %}
-    <script src="/static/js/navbar.js" defer></script>
     <script type="module" src="/static/js/characters.js" defer></script>
 {% endblock %}
 {% block title %}Home{% endblock %}
 {% block content %}
     {% include 'navbar.html' %}
-    <div id="character_grid_container">
+    <div id="characters_container">
     </div>
     {% include 'footer.html' %}
 {% endblock %}

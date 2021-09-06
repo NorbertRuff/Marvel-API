@@ -3,13 +3,17 @@
     <link rel="stylesheet" href="/static/css/cinematic_universe.css">
 {% endblock %}
 {% block scripts %}
-    <script src="/static/js/navbar.js" defer></script>
     <script type="module" src="/static/js/cinematic_universe.js" defer></script>
 {% endblock %}
 {% block title %}Home{% endblock %}
 {% block content %}
     {% include 'navbar.html' %}
-    <div id="character_grid_container">
+    <h2 class="title">Featured movies</h2>
+    <div id="featured_movies_container">
+
+    </div>
+    <h2 class="title">Movies</h2>
+    <div id="movies_container">
     </div>
     {% include 'footer.html' %}
 {% endblock %}

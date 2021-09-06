@@ -3,14 +3,22 @@ export let dataHandler = {
     _api_get: function (url, callback) {
         // it is not called from outside
         // loads data from API, parses it and calls the callback with it
-
         fetch(url, {
             method: 'GET',
             credentials: 'same-origin'
         })
-        .then(response => response.json())  // parse the response as JSON
-        .then(json_response => callback(json_response));  // Call the `callback` with the returned object
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                } else {
+                    response.json()// parse the response as JSON
+                        .then(json_response => callback(json_response)) // Call the `callback` with the returned object
+                }
+            })
+            .catch(error =>console.log(error))
     },
+
+
     _api_post: function (url, data, callback) {
         // it is not called from outside
         // sends the data to the API, and calls callback function
@@ -23,7 +31,7 @@ export let dataHandler = {
             },
             body: JSON.stringify(data),
         })
-        .then(response => response.json())
-        .then(json_response => callback(json_response));
+            .then(response => response.json())
+            .then(json_response => callback(json_response));
     }
 }

@@ -1,11 +1,11 @@
 import {dataHandler} from "./data_handler.js";
 
-window.onload = () => {
+const fetchFeaturedCharacters = () => {
 
     let limit = 100;
     let order = "-modified";
     let offset = 0;
-    let gridContainer = document.querySelector("#character_grid_container");
+
 
     const allCharacters = `/get_characters_data?offset=${offset}&order=${order}&limit=${limit}`;
 
@@ -39,34 +39,24 @@ window.onload = () => {
         let url = `/get_avanger_data?charId=${id}`;
         dataHandler._api_get(url, createCard);
     }
-
-
-    function createCard(character) {
-        gridContainer.insertAdjacentHTML('beforeend', `
-            <div class="character_card">
-               <div class="card_img" data-id="${character.id}"></div>
-               <div class="card_title"> ${character.name}</div>
-               <div class="card_id"> ${character.id}</div>
-               <div class="card_id"> ${character.description}</div>
-               
-            </div>
-        `);
-        document.querySelector(`.card_img[data-id='${character.id}']`).style.backgroundImage = `url(${character.thumbnail.path}` + `.${character.thumbnail.extension})`;
-    }
-
-    function fetchCharacters(url, callback) {
-        fetch(url)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    console.error("Error with server");
-                }
-            })
-            .then(data => {
-                callback(data);
-            })
-            .catch(error => console.error("Error with fetch " + error));
-    }
-
 }
+
+
+const createCard = (character) => {
+    console.log(character)
+    let container = document.querySelector("#characters_container");
+    container.insertAdjacentHTML('beforeend', `
+            <article class="gradient-shadow">
+                <div class="card card_details_container">
+                   <img src="${character.thumbnail.path+"."+character.thumbnail.extension}" alt="${character.name}" class="card_img">
+                    <div class="descriptions">
+                        <h2 class="card__title">${character.name}</h2>
+                        <p class="overview">` + (character.description !== null ? character.description : 'No info') +
+                        `</p>                  
+                    </div>
+                </div>
+            </article>
+        `);
+}
+
+fetchFeaturedCharacters();
