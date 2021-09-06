@@ -85,6 +85,12 @@ def login():
         return render_template('login.html', error=error)
 
 
+@app.route("/search", methods=['GET'])
+def search():
+    print(request.args['name'])
+    return render_template('index.html')
+
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     error = None
