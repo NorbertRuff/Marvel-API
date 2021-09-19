@@ -43,7 +43,6 @@ const fetchFeaturedCharacters = () => {
 
 
 const createCard = (character) => {
-    console.log(character)
     let container = document.querySelector("#characters_container");
     container.insertAdjacentHTML('beforeend', `
             <article class="gradient-shadow">

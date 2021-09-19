@@ -1,5 +1,6 @@
 import hashlib
 import os
+
 import requests as requests
 from flask import Flask, render_template, request, jsonify, make_response
 
@@ -26,31 +27,9 @@ def characters():
     return render_template('characters.html')
 
 
-@app.route("/cinematic_universe", methods=['GET'])
+@app.route("/cinematic-universe", methods=['GET'])
 def cinematic_universe():
     return render_template('marvel_cinematic_universe.html')
-
-
-@app.route("/get_mcu_movies", methods=['GET'])
-def get_mcu_movies():
-    url = "https://mcuapi.herokuapp.com/api/v1/movies"
-    try:
-        response = requests.get(url).json()
-        movies_list = response['data']
-        return jsonify(movies_list)
-    except:
-        return make_response(jsonify({'response': 'Error with server'}), 400)
-
-
-@app.route("/get_featured_movies", methods=['GET'])
-def get_featured_movies():
-    url = "https://mcuapi.herokuapp.com/api/v1/movies?limit=5&order=box_office%2CDESC"
-    try:
-        response = requests.get(url).json()
-        movies_list = response['data']
-        return jsonify(movies_list)
-    except:
-        return make_response(jsonify({'response': 'Error with server'}), 400)
 
 
 @app.route('/get_characters_data', methods=['GET'])
@@ -100,28 +79,101 @@ def get_avanger_data():
         return jsonify({'response': 'Error with server'})
 
 
-@app.route("/login", methods=['GET', 'POST'])
-def login():
-    error = None
-    if request.method == 'GET':
-        return render_template('login.html', error=error)
+@app.route('/get-all-movies', methods=['GET'])
+def get_all_movies():
+    url = "https://mcuapi.herokuapp.com/api/v1/movies"
+    try:
+        response = requests.get(url).json()
+        movies_list = response['data']
+        return jsonify(movies_list)
+    except:
+        return jsonify({'response': 'Error with server'})
 
 
-@app.route("/search", methods=['GET'])
-def search():
-    print(request.args['name'])
-    return render_template('index.html')
+# <--------------------------------------navbar-------------------------------------->
+@app.route("/get-featured-comics", methods=['GET'])
+def get_featured_comics():
+    base_url = "https://gateway.marvel.com/v1/public/comics"
+    order = "-modified"
+    limit = "5"
+    offset = "30"
+    url = f"{base_url}?orderBy={order}&limit={limit}&offset={offset}&ts={timestamp}&apikey={public_key}&hash={marvel_hash}"
+    try:
+        response = requests.get(url).json()
+        comics_list = response['data']["results"]
+        return jsonify(comics_list)
+    except:
+        return make_response(jsonify({'response': 'Error with server'}), 400)
 
 
-@app.route("/register", methods=['GET', 'POST'])
-def register():
-    error = None
-    if request.method == 'POST':
-        return render_template('login.html')
-    if request.method == 'GET':
-        return render_template('register.html')
+@app.route("/get-featured-movies", methods=['GET'])
+def get_featured_movies():
+    url = "https://mcuapi.herokuapp.com/api/v1/movies?limit=5&order=box_office%2CDESC"
+    try:
+        response = requests.get(url).json()
+        movies_list = response['data']
+        return jsonify(movies_list)
+    except:
+        return make_response(jsonify({'response': 'Error with server'}), 400)
 
 
+@app.route("/get-featured-creators", methods=['GET'])
+def get_featured_creators():
+    base_url = "https://gateway.marvel.com/v1/public/creators"
+    modified = "2019-01-01"
+    limit = "100"
+    offset = "0"
+    url = f"{base_url}?modifiedSince={modified}&limit={limit}&offset={offset}&ts={timestamp}&apikey={public_key}&hash={marvel_hash}"
+    try:
+        response = requests.get(url).json()
+        creator_list = response['data']["results"]
+        filtered_creators = []
+        counter = 0
+        for creator in creator_list:
+            if (creator["thumbnail"]["path"])[-9:] != "available":
+                counter += 1
+                filtered_creators.append(creator)
+                if counter == 5:
+                    return jsonify(filtered_creators)
+        return jsonify(filtered_creators)
+    except:
+        return make_response(jsonify({'response': 'Error with server'}), 400)
+
+
+@app.route("/get-featured-tv-shows", methods=['GET'])
+def get_featured_tv_shows():
+    url = "https://mcuapi.herokuapp.com/api/v1/tvshows?limit=10&order=release_date%2CDESC"
+    try:
+        response = requests.get(url).json()
+        movies_list = response['data']
+        return jsonify(movies_list)
+    except:
+        return make_response(jsonify({'response': 'Error with server'}), 400)
+
+
+@app.route("/get-featured-characters", methods=['GET'])
+def get_featured_characters():
+    base_url = "https://gateway.marvel.com/v1/public/characters"
+    order = "-modified"
+    limit = "50"
+    url = f"{base_url}?orderBy={order}&limit={limit}&ts={timestamp}&apikey={public_key}&hash={marvel_hash}"
+    try:
+        response = requests.get(url).json()
+        characters_list = response['data']["results"]
+        filtered_characters_list = []
+        counter = 0
+        for creator in characters_list:
+            if (creator["thumbnail"]["path"])[-9:] != "available":
+                counter += 1
+                filtered_characters_list.append(creator)
+                if counter == 5:
+                    return jsonify(filtered_characters_list)
+        return jsonify(filtered_characters_list)
+    except:
+        return make_response(jsonify({'response': 'Error with server'}), 400)
+
+
+# <--------------------------------------navbar-------------------------------------->
 if __name__ == '__main__':
     app.run(
         use_reloader=True,
