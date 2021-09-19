@@ -33,5 +33,14 @@ export let dataHandler = {
         })
             .then(response => response.json())
             .then(json_response => callback(json_response));
-    }
+    },
+
+    getFeaturedCards: function (url) {
+        return new Promise ((resolve, reject) => {
+            this._api_get(url, (response) => {
+            this._data['data'] = response;
+            resolve(response)
+        });
+    })
+    },
 }
