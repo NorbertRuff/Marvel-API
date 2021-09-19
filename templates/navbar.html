@@ -17,14 +17,14 @@
     <div class="navbar flex-container">
 
         <div class="subnav">
-            <a href="{{ url_for('characters') }}">
+            <a href="{{ url_for('comics') }}">
                 <button class="menu_btn comics">Comics</button>
             </a>
             <div class="dropdown-content">
                 <div class="dropdown-content-button-container">
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">All comics</a>
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">Latest Comics</a>
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">Most viewed comics</a>
+                    <a href="{{ url_for('comics') }}" class="dropdown-content-link">All comics</a>
+                    <a href="{{ url_for('comics') }}" class="dropdown-content-link">Latest Comics</a>
+                    <a href="{{ url_for('comics') }}" class="dropdown-content-link">Most viewed comics</a>
                 </div>
                 <h2>Featured</h2>
                 <div class="dropdown-content-card-container" id="comics-featured-container">

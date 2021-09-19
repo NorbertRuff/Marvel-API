@@ -27,9 +27,16 @@ def characters():
     return render_template('characters.html')
 
 
+@app.route("/comics", methods=['GET'])
+def comics():
+    return render_template('comics.html')
+
+
 @app.route("/cinematic-universe", methods=['GET'])
 def cinematic_universe():
-    return render_template('marvel_cinematic_universe.html')
+    url = "https://mcuapi.herokuapp.com/api/v1/movies/21"
+    movie_details = requests.get(url).json()
+    return render_template('marvel_cinematic_universe.html', movie_details=movie_details)
 
 
 @app.route('/get_characters_data', methods=['GET'])
