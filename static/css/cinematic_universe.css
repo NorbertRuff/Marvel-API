@@ -30,7 +30,7 @@
     transform: scale(1);
 }
 
-.gradient-shadow:hover{
+.gradient-shadow:hover {
     transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
     filter: drop-shadow(0 0 0.75rem white);
     background-image: linear-gradient(40deg, hsl(var(--clr-blue)), hsl(var(--clr-orange)));
@@ -42,6 +42,49 @@
     filter: blur(3px);
 }
 
+/*<------------------------------hero----------------------------------->*/
+.hero-container {
+    background-image: url("/static/img/captain-marvel-2019.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: auto;
+    height: 85vh;
+    display: grid;
+    grid-template-areas:
+        "title . details"
+        ". . ."
+        ". overview overview";
+    justify-items: center;
+    align-items: center;
+    color: #f9f9f9;
+    font-family: var(--font-secondary);
+}
+
+.movie-overview {
+    grid-area: overview;
+}
+
+.hero-container-title {
+    grid-area: title;
+}
+
+.hero-container-details {
+    grid-area: details;
+}
+
+.details-container {
+    font-size: clamp(0.6rem, 4vw, 0.8rem);
+    background-color: var(--clr-container);
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 40px 0 40px 0;
+}
+
+.summary{
+    padding: 1rem;
+}
+/*<------------------------------hero----------------------------------->*/
 /*<------------------------------card component----------------------------------->*/
 .card {
     display: flex;
@@ -49,7 +92,7 @@
     padding: var(--spacer);
     min-width: 30ch;
     border-radius: 1em;
-    color:  var(--clr-black);;
+    color: var(--clr-black);;
     box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
     min-height: 45ch;
     transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
@@ -62,11 +105,13 @@
     width: auto;
     overflow-y: auto;
 }
+
 .card__title {
-    color:  var(--clr-black);
+    color: var(--clr-black);
     font-size: 1.5rem;
     padding-bottom: 1vh;
 }
+
 .card_details_container {
     border-radius: 1em;
     overflow: hidden;
@@ -100,6 +145,7 @@
     box-sizing: border-box;
     clip-path: circle(0% at 100% 100%);
 }
+
 /*<------------------------------gradient shadow----------------------------------->*/
 
 .gradient-shadow {
@@ -107,7 +153,7 @@
     position: relative;
     isolation: isolate;
     border-radius: 1em;
-    border: 5px solid  var(--clr-black);;
+    border: 5px solid var(--clr-black);
 }
 
 .gradient-shadow::before,

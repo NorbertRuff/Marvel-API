@@ -4,9 +4,11 @@
     --clr-white: #f9f9f9;
     --clr-black: black;
     --clr-marvelred: #e12835;
+    --clr-container: rgba(224, 41, 44, 0.7);
     --clr-marvelgradient: radial-gradient(#e12835 20%, #be2633 50%, rgba(0, 0, 0, 0.5) 100%);
     --clr-navbargradient: radial-gradient(#730801, #1f0100);
     --spacer: 2rem;
+    --font-secondary: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
 }
 
 *,
