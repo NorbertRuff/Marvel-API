@@ -11,20 +11,20 @@
     {% block css %}
 
     {% endblock %}
-<!-- Javascript -->
+    <!-- Javascript -->
     {% block scripts %}
 
     {% endblock %}
-    <script src="/static/js/navbar.js" defer></script>
+    <script type="module" src="/static/js/navbar.js" defer></script>
     <title>{% block title %}{% endblock %} | Marvel API</title>
 </head>
 <body>
-
+{% include 'navbar.html' %}
 
 {% block content %}
 
 {% endblock %}
-
+{% include 'footer.html' %}
 
 </body>
 </html>
