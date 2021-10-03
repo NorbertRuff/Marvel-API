@@ -73,30 +73,6 @@
     display: flex;
     justify-content: space-around;
 }
-.dropdown-thumbnail {
-    width: clamp(10vh, 10vw, 15vw);
-    border: 1px solid black;
-    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-}
-.dropdown-thumbnail:hover,
-.dropdown-thumbnail:focus-within {
-       filter: drop-shadow( 0.5rem 0.5rem 0.2rem rgba(0,0,0,0.8));
-      transform: translateY(-10px);
-      transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-
-.dropdown-card-details {
-    min-width: 10vw;
-    max-width: 10vw;
-    margin: 0;
-    text-align: center;
-    font-size: clamp(0.6rem, 5vw, 1rem)
-}
-.dropdown-details-id {
-    color: var(--clr-marvelred);
-}
 
 /*<------------------------------------dropdown------------------------------------->*/
 /*<------------------------------------logo------------------------------------->*/
