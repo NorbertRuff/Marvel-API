@@ -18,6 +18,10 @@
     position: relative;
     width: clamp(10vh, 14vw, 16vw);
 }
+.comic-card-details {
+    text-align: center;
+    font-size: clamp(0.6rem, 5vw, 1rem)
+}
 .price{
     position: absolute;
     text-align: right;

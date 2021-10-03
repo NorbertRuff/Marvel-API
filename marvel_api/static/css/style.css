@@ -137,11 +137,12 @@ body {
       transform: translateY(-10px);
       transition: all .5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-
 .card-details {
     text-align: center;
-    font-size: clamp(0.6rem, 5vw, 1rem)
+    max-width: 8vw;
+    margin: auto;
 }
+
 .card-details-id {
     padding: 2px;
     color: var(--clr-marvelred);

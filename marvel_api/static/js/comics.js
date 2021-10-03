@@ -44,7 +44,7 @@ const createCards = (comics, container) => {
                  <a href="/comics/${comic.id}"<div class="mini-card">
                     <img class="card-thumbnail card_medium" src="${comic.thumbnail.path}.${comic.thumbnail.extension}" alt="${comic.title}">
                     ${getPrices(comic)}
-                    <div class="card-details">
+                    <div class="comic-card-details">
                         <p class="comic_title">${comic.title}</p>
                         <p class="comic_format">${comic.format}</p>
                         ${getCreators(comic)}
