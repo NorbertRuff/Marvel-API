@@ -155,3 +155,32 @@ def get_featured_characters():
     except KeyError:
         print(response['message'])
         return make_response(jsonify(response['message']), 400)
+
+
+@routes.route("/get_latest_comics_data", methods=['GET'])
+def get_latest_comics():
+    base_url = "https://gateway.marvel.com/v1/public/comics"
+    dateDescriptor = "thisMonth"
+    order = request.values['order']
+    limit = request.values['limit']
+    url = f"{base_url}?dateDescriptor={dateDescriptor}&orderBy={order}&limit={limit}&ts={timestamp}&apikey={public_key}&hash={marvel_hash}"
+    try:
+        response = requests.get(url).json()
+        return jsonify(response)
+    except KeyError:
+        print(response['message'])
+        return make_response(jsonify(response['message']), 400)
+
+
+@routes.route("/get_best_selling_comics_data", methods=['GET'])
+def get_best_selling_comics():
+    base_url = "https://gateway.marvel.com/v1/public/comics"
+    order = request.values['order']
+    limit = request.values['limit']
+    url = f"{base_url}?orderBy={order}&limit={limit}&ts={timestamp}&apikey={public_key}&hash={marvel_hash}"
+    try:
+        response = requests.get(url).json()
+        return jsonify(response)
+    except KeyError:
+        print(response['message'])
+        return make_response(jsonify(response['message']), 400)
