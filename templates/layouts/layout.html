@@ -19,12 +19,16 @@
     <title>{% block title %}{% endblock %} | Marvel API</title>
 </head>
 <body>
-{% include 'navbar.html' %}
+<div class="page_wrapper">
+    {% include 'structure/navbar.html' %}
+    <div class="mainWrapper">
 
-{% block content %}
 
-{% endblock %}
-{% include 'footer.html' %}
+        {% block content %}
 
+        {% endblock %}
+    </div>
+    {% include 'structure/footer.html' %}
+</div>
 </body>
 </html>
