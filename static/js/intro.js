@@ -14,6 +14,8 @@ window.onload = () => {
         for (let i = 0; i < array.length; i++) {
             let img = new Image();
             img.onload = function () {
+                counter = counter + 100 / array.length ;
+                animation_percentage.innerHTML = counter + ' %';
                 let index = list.indexOf(this);
                 if (index !== -1) {
                     list.splice(index, 1);
@@ -56,7 +58,7 @@ window.onload = () => {
         });
     })).then(results => {
         if (results.every(res => res)) {
-            loading();
+            // loading();
             if (audio.readyState > 3) {
                 initAnimation();
             }
@@ -86,16 +88,16 @@ window.onload = () => {
     async function delay(ms) {
         return await new Promise(resolve => setTimeout(resolve, ms));
     }
-
-    function loading() {
-        const loading_anim = setInterval(() => {
-            counter = counter + 1;
-            animation_percentage.innerHTML = counter + ' %';
-            if (counter === 100) {
-                clearInterval(loading_anim);
-            }
-        }, 20);
-    }
+    //
+    // function loading() {
+    //     const loading_anim = setInterval(() => {
+    //         counter = counter + 1;
+    //         animation_percentage.innerHTML = counter + ' %';
+    //         if (counter === 100) {
+    //             clearInterval(loading_anim);
+    //         }
+    //     }, 20);
+    // }
 
     function playAnimation() {
         document.getElementById("marvel_logo").style.animation = "marvel 11s ease 2s forwards";
