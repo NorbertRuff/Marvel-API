@@ -66,10 +66,10 @@ window.onload = () => {
         for (let comic of comics) {
             comicsDropdownMenuCardContainer.insertAdjacentHTML('beforeend', `
          <a href="/comics/${comic.id}"<div class="mini-card">
-        <img class="dropdown-thumbnail" src="${comic.thumbnail.path}.${comic.thumbnail.extension}" alt="${comic.title}">
-        <div class="dropdown-card-details">
+        <img class="card-thumbnail card_small" src="${comic.thumbnail.path}.${comic.thumbnail.extension}" alt="${comic.title}">
+        <div class="card-details">
             <p>${comic.title}</p>
-            <p class="dropdown-details-id">${comic.id}</p>
+            <p class="card-details-id">${comic.id}</p>
         </div>
         </div></a>`)
         }
@@ -80,11 +80,11 @@ window.onload = () => {
         for (let movie of movies) {
             mcuDropdownMenuCardContainer.insertAdjacentHTML('beforeend', `
          <a href="/comics/${movie.id}"<div class="mini-card">
-        <img class="dropdown-thumbnail" src="${movie.cover_url}" alt="${movie.title}">
-        <div class="dropdown-card-details">
+        <img class="card-thumbnail card_small" src="${movie.cover_url}" alt="${movie.title}">
+        <div class="card-details">
             <p>${movie.title}</p>
-            <p class="dropdown-details-id">${movie.release_date}</p>
-            <p class="dropdown-details-id">${movie.saga}</p>
+            <p class="card-details-id">${movie.release_date}</p>
+            <p class="card-details-id">${movie.saga}</p>
         </div>
         </div></a>`)
         }
@@ -96,11 +96,11 @@ window.onload = () => {
         for (let show of shows) {
             tvShowDropdownMenuCardContainer.insertAdjacentHTML('beforeend', `
          <a href="/tv/${show.id}"<div class="mini-card">
-        <img class="dropdown-thumbnail" src="${show.cover_url}" alt="${show.title}">
-        <div class="dropdown-card-details">
+        <img class="card-thumbnail card_small" src="${show.cover_url}" alt="${show.title}">
+        <div class="card-details">
             <p>${show.title}</p>
-            <p class="dropdown-details-id">${show.release_date}</p>
-            <p class="dropdown-details-id">
+            <p class="card-details-id">${show.release_date}</p>
+            <p class="card-details-id">
                 <span>Seasons: ${show.number_seasons}</span>
                 <span>Episodes: ${show.number_episodes}</span>
             </p>
@@ -115,10 +115,10 @@ window.onload = () => {
         for (let creator of creators) {
                 creatorDropdownMenuCardContainer.insertAdjacentHTML('beforeend', `
          <a href="/creator/${creator.id}"<div class="mini-card">
-          <img class="dropdown-thumbnail" src="${creator.thumbnail.path}.${creator.thumbnail.extension}" alt="${creator.fullname}">
-            <div class="dropdown-card-details">
+          <img class="card-thumbnail card_small" src="${creator.thumbnail.path}.${creator.thumbnail.extension}" alt="${creator.fullname}">
+            <div class="card-details">
             <p>${creator.id}</p>
-            <p class="dropdown-details-id">
+            <p class="card-details-id">
                 <span>${creator.firstName}</span>
                 <span>${creator.lastName}</span>
             </p>
@@ -132,10 +132,10 @@ window.onload = () => {
         for (let character of featuredCharacters) {
                 characterDropdownMenuCardContainer.insertAdjacentHTML('beforeend', `
          <a href="/creator/${character.id}"<div class="mini-card">
-          <img class="dropdown-thumbnail" src="${character.thumbnail.path}.${character.thumbnail.extension}" alt="${character.name}">
-            <div class="dropdown-card-details">
+          <img class="card-thumbnail card_small" src="${character.thumbnail.path}.${character.thumbnail.extension}" alt="${character.name}">
+            <div class="card-details">
             <p>${character.name}</p>
-            <p class="dropdown-details-id">
+            <p class="card-details-id">
                  <span>${character.comics.available} Comics</span>
                  <h5>${character.id}</h5>
             </p>
