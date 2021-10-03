@@ -1,24 +1,16 @@
 .header_grid_container {
+    grid-area: header;
     background-color: var(--clr-marvelred);
     background-image: var(--clr-marvelgradient);
     background-size: 120%;
     background-position: center;
     display: grid;
+    height: 100%;
     grid-template-columns: 1fr 3fr 1fr;
     grid-auto-flow: row;
     grid-template-areas:
     ". wrapper login_register"
     "flex-container flex-container flex-container";
-}
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    align-items: center;
-    font-family: BentonSans, sans-serif;
-    background-image: var(--clr-black);
-    z-index: 10;
 }
 
 .subnav:hover .dropdown-content {
@@ -41,14 +33,14 @@
     align-items: center;
 }
 
-.flex-container {
-    background-color: black;
+.navbar-container {
+    background-color: var(--clr-marvelblack);
+    border-top: 1px solid rgba(255,255,255,0.6);
     grid-area: flex-container;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    min-height: 5vh;
     position: relative;
 }
 /*<------------------------------------dropdown------------------------------------->*/
@@ -217,7 +209,7 @@
     cursor: pointer;
     position: relative;
     display: inline-block;
-    background: var(--clr-black);
+    background: var(--clr-marvelblack);
     color: var(--clr-white);
     line-height: 42px;
     border: none;
@@ -240,7 +232,7 @@
     height: 50%;
     right: 0;
     z-index: -1;
-    background: var(--clr-black);
+    background: var(--clr-marvelblack);
     transition: all 0.3s ease;
 }
 
@@ -255,7 +247,7 @@
 .menu_btn:hover:before,
 .menu_btn:hover:after {
     height: 0;
-    background-color: var(--clr-black);
+    background-color: var(--clr-marvelblack);
 }
 /*<------------------------------------btn------------------------------------->*/
 

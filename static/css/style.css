@@ -3,6 +3,7 @@
     --clr-blue: 239 100% 50%;
     --clr-white: #f9f9f9;
     --clr-black: black;
+    --clr-marvelblack: #202020;
     --clr-marvelred: #e12835;
     --clr-container: rgba(224, 41, 44, 0.7);
     --clr-marvelgradient: radial-gradient(#e12835 20%, #be2633 50%, rgba(0, 0, 0, 0.5) 100%);
@@ -31,12 +32,46 @@ a:visited{
     font-family: BentonSans;
     src: url(/static/font/BentonSans-Comp-Black-Regular.otf);
 }
-
+html,body {
+    height:100%;
+}
 body {
     background: #4b6cb7; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #182848, #4b6cb7); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: BentonSans, sans-serif;
     /*font-family: "Barlow Condensed", sans-serif;*/
+}
+
+.page_wrapper {
+    display: grid;
+    align-content: space-between;
+    grid-template-areas:
+            "header"
+            "mainContent"
+            "footer";
+    min-height: 100vh;
+
+}
+
+.mainWrapper {
+    height: 100%;
+    grid-area: mainContent;
+}
+
+.footer_container{
+    grid-area: footer;
+    width: 100%;
+    color: var(--clr-white);
+    height: 5rem;
+    border-top: 1px solid rgba(255,255,255,0.6);
+    background-color: var(--clr-marvelblack);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.footer_content {
+
 }
 

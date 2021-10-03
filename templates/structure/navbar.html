@@ -14,17 +14,17 @@
             <button class="register-btn">Register</button>
         </div>
     </div>
-    <div class="navbar flex-container">
+    <div class="navbar-container">
 
         <div class="subnav">
-            <a href="{{ url_for('comics') }}">
+            <a href="{{ url_for('routes.comics') }}">
                 <button class="menu_btn comics">Comics</button>
             </a>
             <div class="dropdown-content">
                 <div class="dropdown-content-button-container">
-                    <a href="{{ url_for('comics') }}" class="dropdown-content-link">All comics</a>
-                    <a href="{{ url_for('comics') }}" class="dropdown-content-link">Latest Comics</a>
-                    <a href="{{ url_for('comics') }}" class="dropdown-content-link">Most viewed comics</a>
+                    <a href="{{ url_for('routes.comics') }}" class="dropdown-content-link">All comics</a>
+                    <a href="{{ url_for('routes.comics') }}" class="dropdown-content-link">Latest Comics</a>
+                    <a href="{{ url_for('routes.comics') }}" class="dropdown-content-link">Most viewed comics</a>
                 </div>
                 <h2>Featured</h2>
                 <div class="dropdown-content-card-container" id="comics-featured-container">
@@ -36,14 +36,14 @@
 
 
         <div class="subnav">
-            <a href="{{ url_for('cinematic_universe') }}">
+            <a href="{{ url_for('routes.cinematic_universe') }}">
                 <button class="menu_btn mcu">MARVEL Cinematic Universe</button>
             </a>
             <div class="dropdown-content">
                 <div class="dropdown-content-button-container">
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">All movies</a>
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">Latest movies</a>
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">Most viewed movies</a>
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">All movies</a>
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">Latest movies</a>
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">Most viewed movies</a>
                 </div>
                 <h2>Featured</h2>
                 <div class="dropdown-content-card-container" id="mcu-featured-container">
@@ -54,12 +54,12 @@
         </div>
 
         <div class="subnav">
-            <a href="{{ url_for('cinematic_universe') }}">
+            <a href="{{ url_for('routes.cinematic_universe') }}">
                 <button class="menu_btn tv">TV-Shows</button>
             </a>
             <div class="dropdown-content">
                 <div class="dropdown-content-button-container">
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">All Tv-shows</a>
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">All Tv-shows</a>
                 </div>
                 <h2>Featured</h2>
                 <div class="dropdown-content-card-container" id="tv-show-featured-container">
@@ -71,12 +71,12 @@
 
 
         <div class="subnav">
-            <a href="{{ url_for('characters') }}">
+            <a href="{{ url_for('routes.characters') }}">
                 <button class="menu_btn creators">Creators</button>
             </a>
             <div class="dropdown-content">
                 <div class="dropdown-content-button-container">
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">All creators</a>
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">All creators</a>
                 </div>
                 <div class="dropdown-content-card-container" id="creators-featured-container">
 
@@ -85,14 +85,14 @@
             </div>
         </div>
         <div class="subnav">
-            <a href="{{ url_for('characters') }}">
+            <a href="{{ url_for('routes.characters') }}">
                 <button class="menu_btn comics">Characters</button>
             </a>
             <div class="dropdown-content">
                 <div class="dropdown-content-button-container">
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">All characters</a>
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">Latest characters</a>
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">Most viewed characters</a>
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">All characters</a>
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">Latest characters</a>
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">Most viewed characters</a>
                 </div>
                 <h2>Featured</h2>
                 <div class="dropdown-content-card-container" id="characters-featured-container">
@@ -101,16 +101,16 @@
         </div>
 
         <div class="subnav">
-            <a href="{{ url_for('characters') }}">
+            <a href="{{ url_for('routes.characters') }}">
                 <button class="menu_btn stories">News</button>
             </a>
             <div class="dropdown-content">
                 <div class="dropdown-content-button-container">
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">All
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">All
                         shows</a>
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">Latest
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">Latest
                         Tv-shows</a>
-                    <a href="{{ url_for('cinematic_universe') }}" class="dropdown-content-link">Most viewed
+                    <a href="{{ url_for('routes.cinematic_universe') }}" class="dropdown-content-link">Most viewed
                         Tv-shows</a>
                 </div>
                 <h2>Featured</h2>
