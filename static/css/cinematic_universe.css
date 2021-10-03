@@ -32,7 +32,7 @@
 
 .gradient-shadow:hover {
     transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
-    filter: drop-shadow(0 0 0.75rem white);
+    filter: drop-shadow(0 0 0.75rem var(--clr-white));
     background-image: linear-gradient(40deg, hsl(var(--clr-blue)), hsl(var(--clr-orange)));
 }
 
@@ -57,7 +57,7 @@
         ". overview overview";
     justify-items: center;
     align-items: center;
-    color: #f9f9f9;
+    color: var(--clr-white);
     font-family: var(--font-secondary);
 }
 
@@ -92,7 +92,7 @@
     padding: var(--spacer);
     min-width: 30ch;
     border-radius: 1em;
-    color: var(--clr-black);;
+    color: var(--clr-black);
     box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
     min-height: 45ch;
     transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);

@@ -17,7 +17,7 @@
     flex-wrap: wrap;
     flex-flow: column;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid  var(--clr-black);
     border-radius: 4px;
     position: relative;
 }
@@ -31,8 +31,8 @@
     padding: 5px 0;
 }
 .card_title {
-    color: white;
-    -webkit-text-stroke: inherit red;
+    color:  var(--clr-white);
+    -webkit-text-stroke: inherit  var(--clr-marvelred);
     font-weight: bold;
     font-size: 25px;
     text-align: left;
