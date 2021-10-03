@@ -93,16 +93,16 @@ body {
     opacity: 0;
     font-size: 80vh;
     color: rgba(255, 255, 255, 0);
-    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-color: var(--clr-black);
   }
   20% {
     opacity: 1;
     color: rgba(255, 255, 255, 0);
-    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-color: var(--clr-black);
   }
   60% {
     color: rgba(255, 255, 255, 0.5);
-    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-color: var(--clr-black);
   }
   100% {
     opacity: 1;
