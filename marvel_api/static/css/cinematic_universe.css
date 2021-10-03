@@ -1,0 +1,174 @@
+
+#movies_container {
+    margin: 3rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+/*<------------------------------card hover----------------------------------->*/
+
+.card:hover .descriptions {
+    left: 0;
+    transition: all 1s ease-in-out;
+    clip-path: circle(75%);
+}
+
+.card:hover {
+    transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+    transform: scale(1);
+}
+
+.gradient-shadow:hover {
+    transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
+    filter: drop-shadow(0 0 0.75rem var(--clr-white));
+    background-image: linear-gradient(40deg, hsl(var(--clr-blue)), hsl(var(--clr-orange)));
+}
+
+.card:hover img {
+    transition: all .8s cubic-bezier(0.89, 0.17, 0.34, 0.86);
+    transform: scale(1.5) rotate(-20deg);
+    filter: blur(3px);
+}
+
+/*<------------------------------hero----------------------------------->*/
+.hero-container {
+    background-image: url("/static/img/captain-marvel-2019.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 80vh;
+    display: grid;
+    grid-template-areas:
+        "title . details"
+        ". overview overview";
+    justify-items: center;
+    align-items: center;
+    color: var(--clr-white);
+}
+
+.movie-overview {
+    grid-area: overview;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    overflow: hidden;
+}
+
+.hero-container-title {
+    grid-area: title;
+}
+
+.hero-container-details {
+    grid-area: details;
+}
+
+.details-container {
+    font-size: clamp(0.6rem, 3vw, 1rem);
+    background-color: var(--clr-container);
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 40px 0 40px 0;
+}
+
+.summary{
+    font-size: clamp(0.6rem, 3vw, 1rem);
+    padding: 1rem;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+/*<------------------------------hero----------------------------------->*/
+/*<------------------------------card component----------------------------------->*/
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacer);
+    min-width: 30ch;
+    border-radius: 1em;
+    color: var(--clr-black);
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
+    min-height: 45ch;
+    transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
+    cursor: pointer;
+
+}
+
+.overview {
+    height: 90%;
+    width: auto;
+    overflow-y: auto;
+}
+
+.card__title {
+    color: var(--clr-black);
+    font-size: 1.5rem;
+    padding-bottom: 1vh;
+}
+
+.card_details_container {
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.gradient-shadow img {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 0.75em;
+    transition: all .5s cubic-bezier(0.89, 0.17, 0.34, 0.86);
+    border: 5px solid hsla(0, 100%, 0%, 0.7);
+}
+
+/*<------------------------------card component----------------------------------->*/
+/*<------------------------------card description----------------------------------->*/
+
+.descriptions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, .7);
+    width: 100%;
+    height: 100%;
+    transition: all .7s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    clip-path: circle(0% at 100% 100%);
+}
+
+/*<------------------------------gradient shadow----------------------------------->*/
+
+.gradient-shadow {
+    background: linear-gradient(45deg, hsl(var(--clr-orange)), hsl(var(--clr-blue)));
+    position: relative;
+    isolation: isolate;
+    border-radius: 1em;
+    border: 5px solid var(--clr-black);
+}
+
+.gradient-shadow::before,
+.gradient-shadow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: inherit;
+}
+
+.gradient-shadow::before {
+    filter: blur(2em);
+}
+
+.gradient-shadow::after {
+    opacity: 0.8;
+    filter: blur(2em);
+}
+
+/*<------------------------------gradient shadow----------------------------------->*/
+
+/*<------------------------------card description----------------------------------->*/

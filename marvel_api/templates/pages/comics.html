@@ -1,0 +1,20 @@
+{% extends 'layouts/layout.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/comics.css">
+{% endblock %}
+{% block scripts %}
+    <script type="module" src="/static/js/comics.js" defer></script>
+{% endblock %}
+{% block title %}Comics{% endblock %}
+{% block content %}
+    <h1 class="title">Comics</h1>
+    <div id="latest_comics_container" class="comics_container">
+    <h3 class="subtitle font_secondary">Latest comics from last month</h3>
+
+    </div>
+    <div id="best_selling_comics_container" class="comics_container">
+    <h3 class="subtitle font_secondary">Best selling comics</h3>
+
+    </div>
+
+{% endblock %}
