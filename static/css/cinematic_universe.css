@@ -8,14 +8,6 @@
     gap: 20px;
     width: 100%;
 }
-
-.title {
-    padding: 2vh 2vh;
-    text-align: center;
-    background: white;
-}
-
-
 /*<------------------------------card hover----------------------------------->*/
 
 .card:hover .descriptions {
@@ -48,21 +40,21 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: auto;
-    height: 85vh;
+    width: 100%;
+    height: 80vh;
     display: grid;
     grid-template-areas:
         "title . details"
-        ". . ."
         ". overview overview";
     justify-items: center;
     align-items: center;
     color: var(--clr-white);
-    font-family: var(--font-secondary);
 }
 
 .movie-overview {
     grid-area: overview;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    overflow: hidden;
 }
 
 .hero-container-title {
@@ -74,7 +66,7 @@
 }
 
 .details-container {
-    font-size: clamp(0.6rem, 4vw, 0.8rem);
+    font-size: clamp(0.6rem, 3vw, 1rem);
     background-color: var(--clr-container);
     margin: 2rem;
     padding: 2rem;
@@ -82,7 +74,10 @@
 }
 
 .summary{
+    font-size: clamp(0.6rem, 3vw, 1rem);
     padding: 1rem;
+    max-height: 40vh;
+    overflow-y: auto;
 }
 /*<------------------------------hero----------------------------------->*/
 /*<------------------------------card component----------------------------------->*/
