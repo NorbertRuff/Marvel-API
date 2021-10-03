@@ -1,7 +1,7 @@
 
 #movies_container {
+    margin: 3rem 0;
     display: flex;
-    margin-top: 2vh;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
