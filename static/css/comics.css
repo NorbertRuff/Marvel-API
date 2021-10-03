@@ -1,0 +1,46 @@
+
+
+.comics_container {
+    width: 90vw;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3vw;
+    background-color: var(--clr-white);
+}
+
+.comic_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: clamp(10vh, 14vw, 16vw);
+}
+.price{
+    position: absolute;
+    text-align: right;
+    top: 8px;
+    right: 0;
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(60% 0, 100% 10%, 100% 0);
+    background-color: #f9f9f9;
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+.comic_title {
+    font-size: clamp(0.4rem, 4vw, 1.4rem);
+}
+.comic_price{
+
+}
+.comic_format{
+    padding: 1rem;
+    color: var(--clr-marvelblue);
+
+}
