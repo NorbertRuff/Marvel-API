@@ -7,7 +7,7 @@
 {% endblock %}
 {% block title %}Home{% endblock %}
 {% block content %}
-    <div class="hero-container">
+    <div class="hero-container font_secondary">
         <div class="details-container movie-overview">
             <h2>Overview</h2>
             <h3 class="summary">{{ movie_details["overview"] }}</h3>
@@ -17,7 +17,7 @@
         </div>
         <div class="details-container hero-container-details">
             <h3 class="saga">{{ movie_details["saga"] }}</h3>
-            <h3 class="movie-duration">Duration:{{ movie_details["duration"] }} min</h3>
+            <h3 class="movie-duration">Duration: {{ movie_details["duration"] }} min</h3>
             <h3 class="movie-release_date">Released: {{ movie_details["release_date"] }}</h3>
         </div>
 
