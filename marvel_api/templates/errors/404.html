@@ -1,0 +1,21 @@
+{% extends 'layouts/layout.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/error.css">
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}
+{% block title %}Error{% endblock %}
+{% block content %}
+    <div class="error_container">
+
+        <div class="error_content">
+            <h1>HYDRA has stolen this page from the S.H.I.E.L.D. database!</h1>
+            <h3>{{errorMessage}}</h3>
+            <h4>Just kidding, maybe a typo or something.</h4>
+        </div>
+        <div class="error_picture">
+            <img src="/static/img/error.jpg" alt="error">
+        </div>
+    </div>
+{% endblock %}
