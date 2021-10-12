@@ -1,5 +1,5 @@
 
-[comment]: <> (![Reactomon]&#40;https://github.com/NorbertRuff/reactomon-react-NorbertRuff/raw/development/src/static/img/pokelogo.png&#41;)
+![Marvel_Fandom](https://raw.githubusercontent.com/NorbertRuff/Marvel-API/master/marvel_api/static/img/blob/Screenshot%20from%202021-10-12%2018-22-50.png)
 
 ## <div style="color:#f59800" align="center">---|Welcome to my Marvel Fandom Flask Project 👋|---</div>
 <div align="center">
@@ -70,10 +70,16 @@ To run this project, you will need to add the following environment variables to
 # <div style="color:#f59800" align="center">---|Screenshots|---</div>
 <div align="center">
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Marvel_demo](https://raw.githubusercontent.com/NorbertRuff/Marvel-API/master/marvel_api/static/img/blob/marvel_demo.gif)
+
+![Marvel_screenshot1](https://raw.githubusercontent.com/NorbertRuff/Marvel-API/master/marvel_api/static/img/blob/Screenshot%20from%202021-10-12%2018-38-08.png)
+
+![Marvel_screenshot2](https://raw.githubusercontent.com/NorbertRuff/Marvel-API/master/marvel_api/static/img/blob/Screenshot%20from%202021-10-12%2018-38-47.png)
+
+![Marvel_screenshot3](https://raw.githubusercontent.com/NorbertRuff/Marvel-API/master/marvel_api/static/img/blob/Screenshot%20from%202021-10-12%2018-38-27.png)
 
 </div>
-  
+
 ## <div style="color:#f59800" align="center">---|Lessons Learned|---</div>
 
 - Structuring flask routes
