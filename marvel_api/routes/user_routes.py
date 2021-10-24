@@ -1,11 +1,13 @@
 from flask import redirect, session, url_for, request, jsonify
 
-import data_handler
-import password_hasher
+
 from . import routes
 
 
 # <--------------------------------------login-------------------------------------->
+from marvel_api.utils import password_hasher, data_handler
+
+
 @routes.route("/register", methods=["POST", "GET"])
 def register():
     new_username = request.get_json()['new_username']

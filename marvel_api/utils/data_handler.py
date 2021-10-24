@@ -1,4 +1,4 @@
-import connection
+from marvel_api.utils import connection
 
 
 @connection.connection_handler
